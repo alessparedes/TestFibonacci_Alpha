@@ -6,6 +6,7 @@ namespace Test
 		public Fibonacci()
 		{
 		}
+        //CAP - funtionalty
         public static void Funtion(int fib)
         {
             if (fib < 0) Console.WriteLine("F0");
