@@ -1,33 +1,32 @@
-﻿using System;
-namespace Test
+﻿namespace Test
 {
-	public class Fibonacci
+	public static class Fibonacci
 	{
-		public Fibonacci()
-		{
-		}
-        //CAP - funtionalty
-        public static void Funtion(int fib)
+        //CAP - functionality
+        public static void Function(int fib)
         {
-            if (fib < 0) Console.WriteLine("F0");
-            if (fib == 0) Console.Write($"F{fib}");
-            if (fib == 1) Console.Write($"F{fib}");
+            if (fib < 0) return;
 
-            int number = 0;
-            int number2 = 1;
-            int numberFib;
+            var a = 0;
+            var b = 1;
+            var series = "0";
+            
+            if (fib > 0) series += ", 1";
+            var numberFib = b;
 
-            for (int i = 1; i < fib + 1; i++)
+            while (numberFib <= fib) 
             {
-                numberFib = number + number2;
+                series += $", {numberFib}";
                 if (numberFib == fib)
                 {
-                    Console.WriteLine($"F{fib} = {number} + {number2}");
+                    Console.WriteLine($"Result {fib} = {a} + {b}");
                 }
 
-                number = number2;
-                number2 = numberFib;
+                a = b;
+                b = numberFib;
+                numberFib = a + b;
             }
+            Console.WriteLine(series);
         }
     }
 }
